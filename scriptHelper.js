@@ -37,6 +37,8 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
         list.style.visibility= "visible";
         launchStatus.style.color = "rgb(199, 37, 78)";
         launchStatus.innerHTML = "Shuttle Not Ready for Launch"; 
+        pilotStatus.innerHTML = `Pilot ${pilot} is ready for launch`;
+        copilotStatus.innerHTML = `Co-pilot ${copilot} is ready for launch`;
         if(fuelLevel < 10000) {
             fuelStatus.innerHTML = "Fuel level too low for launch";
         } else if (cargoLevel > 10000){
@@ -44,7 +46,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
         } 
     } else {
         list.style.visibility = "visible";
-        launchStatus.style.color = "green"; 
+        launchStatus.style.color = 'rgb(65, 159, 106)'; 
         launchStatus.innerHTML = "Shuttle is Ready for Launch";
         pilotStatus.innerHTML = `Pilot ${pilot} is ready for launch`;
         copilotStatus.innerHTML = `Co-pilot ${copilot} is ready for launch`;
