@@ -3,12 +3,12 @@
 //const { myFetch, pickPlanet } = require("./scriptHelper");
 
 window.addEventListener("load", function() {
-    const document = window.document
-    const pilot = document.querySelector("input[name=pilotName]");
-    const copilot = document. querySelector("input[name=copilotName]");
-    const fuelLevel = document.querySelector("input[name=fuelLevel]");
-    const cargoLevel = document.querySelector("input[name=cargoMass]");
-    const list = document.getElementById("faultyItems"); 
+    let document = window.document
+    let pilot = document.querySelector("input[name=pilotName]");
+    let copilot = document. querySelector("input[name=copilotName]");
+    let fuelLevel = document.querySelector("input[name=fuelLevel]");
+    let cargoLevel = document.querySelector("input[name=cargoMass]");
+    let list = document.getElementById("faultyItems"); 
 
     list.style.visibility = "hidden";   
 
@@ -40,11 +40,10 @@ window.addEventListener("load", function() {
     let listedPlanets;
     // Set listedPlanetsResponse equal to the value returned by calling myFetch()
     let listedPlanetsResponse = myFetch();
-    listedPlanetsResponse.then(function (result) {
-        listedPlanets = result;
+    listedPlanetsResponse.then(function (response) {
+        listedPlanets = response;
         console.log(listedPlanets);
     }).then(function () {
-        console.log(listedPlanets);
         // Pick a planet from the list of planets and add that information to your destination.
         let pickedPlanet = pickPlanet(listedPlanets);
 
