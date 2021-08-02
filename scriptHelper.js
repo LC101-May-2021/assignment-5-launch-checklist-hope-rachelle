@@ -55,14 +55,20 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
 
 async function myFetch() {
     let planetsReturned;
-
-    planetsReturned = await fetch().then( function(response) {
+    let url = "https://handlers.education.launchcode.org/static/planets.json";
+    planetsReturned = await fetch(url).then( function(response) {
+        response.json().then(function(json){
+            console.log(json);
+        });
         });
 
     return planetsReturned;
 }
 
 function pickPlanet(planets) {
+    let randomPlanet = (Math.random()*(planets.length));
+    let pickedPlanet = planets[randomPlanet];
+    return pickedPlanet;
 }
 
 module.exports.addDestinationInfo = addDestinationInfo;
